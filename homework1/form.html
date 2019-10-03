@@ -1,0 +1,123 @@
+<!<!DOCTYPE html>
+<html>
+  <head>
+    <title>Form Page</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- below are the bootstrap links -->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  </head>
+  <body>      <!--body of the main page-->
+    <!--    TODO:
+    1. Add two text input form-groups, one for the title and the other for the author of the article being written.   done
+    2. Next, you’ll use Bootstrap’s form-row class to align a file upload widget and a select or a dropdown for what page the article will appear on.
+    3. Add an area for the user to input the article text. This should be a large box rather than a thinner one like we used for the title.
+    4. Horizontally align a set of inline checkboxes with a radio button to allow the user to add meta tags to their article and determine
+     whether it will be publicly visible.
+    5. Create a login portal to verify the identity of the person trying to upload to the site. This is a combination of a text input, a password
+    input, a checkbox, and a button.
+    -->
+    <!--container was just for the top of the page banner-->
+    <img src="camp.jpg" class="container-fluid" alt="mountain picture" style="background-color:black; height:25%">
+    <h1 class="container" > <font size=> Add New Article </font> </h1> <br>
+
+    <!--begin form-->
+    <form action="mypage_bootstrap.html" class = "container">
+
+      <!--adding two form-groups, one for the title and other for the author of article being written-->
+      <!--section for form group for email-->
+      <div class="form-group; ">
+        <label for="inputArticleTitle"> <font size=5>Article Title </font> </label>
+        <input type="text" name="articleTitle" class="form-control" id="inputArticleTitle" aria-describedby="articleTitleHelp" placeholder="Ex. Moby Dick" autofocus>
+      </div> <br><br>
+      <!--section for the form group of author input-->
+      <div class="form-group;">
+        <label for="inputAuthor"><font size=5> Author of Article </font> </label>
+        <input type="text" name="authorName" class="form-control" id="inputAuthorNmae" aria-describedby="authorHelp" placeholder="Dr. Suess">
+      </div> <br><br><br>
+      <!--section for a file upload button and a widget dropdown, utilizing the form-row group-->
+      <div class="form-row" style = "margin-left:1px">
+        <div>
+          <label for="uploadFile"><font size=5>Upload File:</font></label>                          <!--area for file upload-->
+          <input type="file" id="myFile" name="filename2" class = "form-class">
+        </div>
+        <div style = "margin-left:325px">                                                 <!-- area for the dropdown widget-->
+          <label for="pagesWidget"><font size=5>Pages</font></label> <br>
+          <input list = "uploadPageType" name="uploadPageType" placeholder="Select Page Type" class="form-control" style="color:green">
+            <datalist id = "uploadPageType">
+              <option value="academics"></option>
+                <option value="notes"></option>
+                  <option value="journal"></option>
+                    <option value="business"></option>
+            </datalist>
+        </div>
+      </div><br><br>
+      <!--This is the section for the input of the article-->
+      <div>
+        <label for="articleText"><font size=5>Article Text</font> </label><br>
+        <div class="input-group-prepend" style="height:400">
+          <textarea class="form-control" placeholder="enter article text here"></textarea>
+        </div>
+      </div> <br><br>
+      <!--this is section for Tags and Visibility-->
+      <div class="form-row">
+        <div >      <!-- first section for the checkboxes-->
+          <label for="languageTags"><font size=5>Select Tags</font></label><br><br>
+          <div class="form-row">
+            <input type="checkbox" name="Python" value="python" style="margin-left:5px">Python
+            <input type="checkbox" name="C++" value="c++" style="margin-left:30px">C++
+            <input type="checkbox" name="Java" value="java" style="margin-left:30px">Java
+            <input type="checkbox" name="Scala" value="scala" style="margin-left:30px">Scala
+            <input type="checkbox" name="Perl" value="perf" style="margin-left:30px">Perl
+          </div>
+        </div>
+
+        <div style="margin-left:350px">     <!-- next section for the other button -->
+            <label for="visibilityButton"><font size=5>Visibility</font></label> <br>
+
+            <div class="btn-group btn-group-toggle" data-toggle="buttons" >                    <!-- figure out how to resize these buttons -->
+              <label class="btn btn-secondary active">
+                <input type="radio" name="options" id="option1" autocomplete="off" checked> Public
+              </label>
+              <label class="btn btn-secondary" >
+                <input type="radio" name="options" id="option2" autocomplete="off"> Private
+              </label>
+            </div>
+        </div>
+        </div> <br><br><br>
+
+        <label for="loginMessage"><font size=5>Login To Finish Submitting</font></label> <br>
+        <div class="form-row">
+          <div class="form-group" >                             <!--section to handle username input-->
+            <input type="text" name="username" placeholder="Enter username" class="form-control" style="width:500px">
+          </div>
+          <div class="form-group" style="margin-left:5px">    <!-- section to handle password input -->
+            <input type="password" name="password" placeholder="Enter Password" class="form-control" style="width:500px">
+          </div>
+        </div>
+        <br>
+        <!--section to handle the "remember me" button-->
+        <input type="checkbox" name="rememberMe" > Remember Me
+
+      <!--</div>-->
+      <!--container for the submit button-->
+      <br><br><br>
+      <div class="container" style="margin-left:-15px">
+        <input style="border-radius:10%; background-color:lightgreen; " type="submit" value="submit" class="btn; btn-primary;">
+      </div>
+    </form>
+    <!--End of form-->
+
+
+  </body>
+</html>
